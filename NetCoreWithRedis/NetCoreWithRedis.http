@@ -1,0 +1,6 @@
+@NetCoreWithRedis_HostAddress = http://localhost:5067
+
+GET {{NetCoreWithRedis_HostAddress}}/api/redis/
+Accept: application/json
+
+###
