@@ -27,7 +27,8 @@ namespace NetCoreWithRedis.Controllers
                     return Ok(response);
                 }
                 var booksResponse = await _booksService.GetBooks();
-                await _redisService.SetData(recordKey, booksResponse);
+                var expirtyTime = DateTimeOffset.Now.AddSeconds(30);
+                await _redisService.SetData(recordKey, booksResponse, expirtyTime);
                 return Ok(booksResponse);
             }
             catch (Exception ex)

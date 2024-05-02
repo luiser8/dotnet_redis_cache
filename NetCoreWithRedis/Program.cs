@@ -41,10 +41,6 @@ builder.Services.AddScoped<IRedisService, RedisService>();
 builder.Services.AddScoped<IBooksService, BooksService>();
 builder.Services.AddScoped<IBusyBooksService, BusyBooksService>();
 
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = "localhost:6379";
-});
 
 var app = builder.Build();
 
